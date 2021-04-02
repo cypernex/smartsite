@@ -8,8 +8,6 @@ services:
     volumes:
       - ./telegraf/etc/telegraf:/etc/telegraf
     user: root
-    links:
-      - influxdb
     ports:
       - "20092:8092/udp"
       - "20094:8094"
@@ -26,8 +24,6 @@ services:
   grafana:
     image: grafana/grafana:latest
     network_mode: bridge
-    links:
-      - influxdb
     ports:
       - "20300:3000"
     environment:
