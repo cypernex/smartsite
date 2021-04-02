@@ -6,7 +6,7 @@ services:
     image: telegraf:latest
     network_mode: bridge
     volumes:
-      - ./persistent-data/telegraf/etc/telegraf:/etc/telegraf
+      - ./telegraf/etc/telegraf:/etc/telegraf
     user: root
     links:
       - influxdb
@@ -19,7 +19,7 @@ services:
     image: quay.io/influxdb/influx:nightly
     network_mode: bridge
     volumes:
-      - ./persistent-data/influxdb/root/.influxdbv2:/root/.influxdbv2
+      - ./influxdb/root/.influxdbv2:/root/.influxdbv2
     user: root
     ports:
       - "20086:8086"
@@ -34,6 +34,6 @@ services:
       - GF_SECURITY_ALLOW_EMBEDDING=true
       - GF_AUTH_ANONYMOUS_ENABLED=true
     volumes:
-      - ./persistent-data/grafana/var/lib/grafana:/var/lib/grafana
-      - ./persistent-data/grafana/etc/grafana:/etc/grafana
+      - ./grafana/var/lib/grafana:/var/lib/grafana
+      - ./grafana/etc/grafana:/etc/grafana
     user: root
