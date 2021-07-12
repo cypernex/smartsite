@@ -64,6 +64,6 @@
         "node-red-node-ui-table": "~0.3.10"
     },
     "engines": {
-        "node": ">=10"
+        "node": ">=5"
     }
 
