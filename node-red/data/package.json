@@ -1,8 +1,34 @@
+
 {
-    "name": "node-red-project",
-    "description": "A Node-RED Project",
-    "version": "0.0.1",
+    "name": "node-red-docker",
+    "version": "1.3.5",
+    "description": "Low-code programming for event-driven applications",
+    "homepage": "http://nodered.org",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/node-red/node-red-docker.git"
+    },
     "private": true,
+    "scripts": {
+        "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS",
+        "debug": "node --inspect=0.0.0.0:9229 $NODE_OPTIONS node_modules/node-red/red.js $FLOWS",
+        "debug_brk": "node --inspect=0.0.0.0:9229 --inspect-brk $NODE_OPTIONS node_modules/node-red/red.js $FLOWS"
+    },
+    "contributors": [
+        {
+            "name": "Dave Conway-Jones"
+        },
+        {
+            "name": "Nick O'Leary"
+        },
+        {
+            "name": "James Thomas"
+        },
+        {
+            "name": "Raymond Mouthaan"
+        }
+    ],
     "dependencies": {
         "node-red-contrib-chartjs": "~0.4.1",
         "node-red-contrib-dashboard-average-bars": "0.0.6",
@@ -36,5 +62,8 @@
         "node-red-node-ui-lineargauge": "~0.3.6",
         "node-red-node-ui-list": "~0.2.5",
         "node-red-node-ui-table": "~0.3.10"
+    },
+    "engines": {
+        "node": ">=10"
     }
-}
+
